@@ -146,8 +146,8 @@ def dlmodel():
         loss_func = nn.BCEWithLogitsLoss()
         optimizer = torch.optim.AdamW(
             model.parameters(),
-                lr=1e-2,
-                weight_decay=1e-4
+                lr=config.params.nn.learning_rate,
+                weight_decay=config.params.nn.weight_decay,
         )
 
         #инициализируем параметры для early stoping-а
